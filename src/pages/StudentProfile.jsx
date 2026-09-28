@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/layout/Navbar";
 import { useToast } from "@/context/ToastContext";
 import { isEventExpired } from "@/services/eventService";
+import API from "@/services/api";
 
 export default function StudentProfile() {
   const toast = useToast();
