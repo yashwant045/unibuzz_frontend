@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8082",
+  baseURL: "https://unibuzz-backend-1-asck.onrender.com",
 });
 
 API.interceptors.request.use((config) => {
