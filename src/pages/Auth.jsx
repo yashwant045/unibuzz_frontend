@@ -42,7 +42,7 @@ export default function Auth() {
 
       // 🔥 ROLE BASED NAVIGATION
       if (userRole === "STUDENT") {
-        navigate("/dashboard/student");
+        navigate("/events");
       } 
       else if (userRole === "FACULTY") {
         navigate("/dashboard/faculty");
