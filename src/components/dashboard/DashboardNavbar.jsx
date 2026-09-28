@@ -85,14 +85,12 @@ export default function DashboardNavbar() {
 
       {/* RIGHT */}
       <div className="flex items-center gap-4">
-        <span className="text-sm">{userName}</span>
-        <button
-          onClick={logout}
-          className="flex items-center gap-2 bg-red-500 px-4 py-2 rounded hover:bg-red-600"
+        <NavLink
+          to={role === 'FACULTY' ? "/dashboard/faculty" : "/profile"}
+          className="bg-yellow-500 w-10 h-10 rounded-full flex items-center justify-center text-black font-bold hover:bg-yellow-400 transition"
         >
-          <LogOut size={16} />
-          Logout
-        </button>
+          👤
+        </NavLink>
       </div>
     </div>
   );

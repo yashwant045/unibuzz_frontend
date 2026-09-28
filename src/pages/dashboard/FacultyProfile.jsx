@@ -10,7 +10,8 @@ import {
   Loader2,
   Edit,
   CalendarDays,
-  CheckCircle2
+  CheckCircle2,
+  LogOut
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -31,6 +32,11 @@ export default function FacultyProfile() {
   const [isSaving, setIsSaving] = useState(false);
   
   const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
 
   useEffect(() => {
     loadData();
@@ -157,10 +163,15 @@ export default function FacultyProfile() {
 
               <Button 
                 onClick={handleEditClick}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 mb-3"
               >
                 <Edit className="h-4 w-4" />
                 Edit Profile
+              </Button>
+              
+              <Button variant="outline" className="w-full text-red-600 border-red-200 hover:bg-red-50 hover:text-red-700 flex items-center justify-center gap-2" onClick={logout}>
+                <LogOut className="h-4 w-4" />
+                Sign Out
               </Button>
             </CardContent>
           </Card>
